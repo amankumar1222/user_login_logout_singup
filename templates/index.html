@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+{% if not user %}
+
+<div class="container">
+    <h3 class="text-center">
+     Success is a journey not a destination. 
+     <p>The doing is often more important than the outcome.</p>
+    </h3>
+ </div>
+
+{% endif %}
+
+
+
+
+{% if user %}
+<div class="container mt-4 p-2"> 
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">username</th>
+        <th scope="col">Email</th>
+        <th scope="col">others</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for users in alluser  %}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{users}}</td>
+        <td>{{users.email}}</td>
+        <td>pass##word</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+{% endblock body %}
+{% block js %}{% endblock js %}
